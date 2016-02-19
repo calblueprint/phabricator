@@ -27,6 +27,12 @@ final class PhabricatorAWSConfigOptions
       $this->newOption('amazon-ses.secret-key', 'string', null)
         ->setHidden(true)
         ->setDescription(pht('Secret key for Amazon SES.')),
+      $this->newOption('amazon-ses.endpoint', 'string', null)
+        ->setLocked(true)
+        ->setDescription(pht('SES endpoint to use.'))
+        ->addExample(
+            'email.us-west-2.amazonaws.com',
+            pht('Use specific endpoint')),
       $this->newOption('amazon-s3.access-key', 'string', null)
         ->setLocked(true)
         ->setDescription(pht('Access key for Amazon S3.')),
